@@ -6,6 +6,8 @@ const muteButton = document.getElementById("muteButton");
 
 playButton.addEventListener("click", function () {
   if (audio.paused) {
+    audio.volume = 0.25;
+    volumeSlider.value = 0.25;
     audio.play();
     playButton.classList.remove("play");
     playButton.classList.add("pause");
