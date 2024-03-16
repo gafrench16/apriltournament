@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <figure>
+      <audio id="music" src="/media/AugustaNationalThemeSong.mp3"></audio>
+      <div id="customControls">
+        <p>Music</p>
+        <button id="playButton" class="play">
+          <img src="assets/play-4.png" alt="Play" />
+          <img src="assets/pause-2.png" alt="Pause" />
+        </button>
+        <button id="muteButton">
+          <img src="assets/volume-off.png" alt="Unmute" />
+          <img src="assets/volume-on.png" alt="Mute" />
+        </button>
+        <input
+          type="range"
+          id="volumeSlider"
+          min="0"
+          max="1"
+          step="0.1"
+          value="1"
+        />
+      </div>
+    </figure>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,130 @@
+/* Custom styles for the audio player and controls */
+#customControls {
+  display: flex;
+  align-items: center; /* Align items vertically in the center */
+  border-radius: 10px; /* Add rounded corners */
+  background-color: #193526;
+  height: 30px;
+  width: 260px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999; /* Ensure controls are on top of other content */
+}
+
+#playButton,
+#muteButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+#playButton,
+#muteButton {
+  width: 22px;
+  height: 22px;
+  background-size: contain;
+}
+
+#playButton img,
+#muteButton img {
+  display: none;
+  width: 22px;
+  height: 22px;
+}
+
+#playButton.play img:first-child,
+#muteButton.muted img:first-child {
+  display: inline;
+}
+
+#playButton.pause img:last-child,
+#muteButton:not(.muted) img:last-child {
+  display: inline;
+}
+
+input {
+  --c: #fff; /* active color */
+  --g: 5px; /* the gap */
+  --l: 3px; /* line thickness*/
+  --s: 12px; /* thumb size*/
+
+  width: 35x;
+  height: var(--s); /* needed for Firefox*/
+  --_c: color-mix(in srgb, var(--c), #000 var(--p, 0%));
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+  cursor: pointer;
+  overflow: hidden;
+  margin-left: 12.5px;
+  margin-right: 12.5px;
+}
+input:focus-visible,
+input:hover {
+  --p: 25%;
+}
+input:active,
+input:focus-visible {
+  --_b: var(--s);
+}
+
+input:disabled {
+  color: #ccc;
+}
+/* chromium */
+input[type="range" i]::-webkit-slider-thumb {
+  height: var(--s);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  box-shadow: 0 0 0 var(--_b, var(--l)) inset var(--_c);
+  border-image: linear-gradient(90deg, var(--_c) 50%, #ababab 0) 0 1 /
+    calc(50% - var(--l) / 2) 100vw/0 calc(100vw + var(--g));
+  -webkit-appearance: none;
+  appearance: none;
+  transition: 0.3s;
+}
+/* Firefox */
+input[type="range"]::-moz-range-thumb {
+  height: var(--s);
+  width: var(--s);
+  background: none;
+  border-radius: 50%;
+  box-shadow: 0 0 0 var(--_b, var(--l)) inset var(--_c);
+  border-image: linear-gradient(90deg, var(--_c) 50%, #ababab 0) 0 1 /
+    calc(50% - var(--l) / 2) 100vw/0 calc(100vw + var(--g));
+  -moz-appearance: none;
+  appearance: none;
+  transition: 0.3s;
+}
+@supports not (color: color-mix(in srgb, red, red)) {
+  input {
+    --_c: var(--c);
+  }
+}
+
+figure {
+  display: flex;
+  flex-direction: row;
+}
+
+body {
+  background-color: #006747;
+}
+
+@font-face {
+  font-family: "Anko";
+  src: url("C:\Windows\Fonts\Anko Personal Use") format("ttf");
+  /* Add additional formats if necessary */
+}
+
+p {
+  font-family: "Anko";
+  font-style: italic;
+  font-weight: bold;
+  color: #fff;
+  margin-left: 15px;
+}
