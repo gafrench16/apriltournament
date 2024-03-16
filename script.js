@@ -35,3 +35,8 @@ muteButton.addEventListener("click", function () {
     volumeSlider.value = 0; // Set volume to 0 when muted
   }
 });
+
+audio.addEventListener("ended", function () {
+  audio.currentTime = 0;
+  audio.play();
+});
