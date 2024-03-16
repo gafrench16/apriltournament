@@ -79,17 +79,3 @@ figure {
 body {
   background-color: #193526;
 }
-
-@font-face {
-  font-family: "Anko";
-  src: url("C:\Windows\Fonts\Anko Personal Use") format("ttf");
-  /* Add additional formats if necessary */
-}
-
-p {
-  font-family: "Anko";
-  font-style: italic;
-  font-weight: bold;
-  color: #fff;
-  margin-left: 15px;
-}
