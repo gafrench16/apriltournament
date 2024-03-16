@@ -78,3 +78,7 @@ figure {
 body {
   background-color: #193526;
 }
+
+button:focus {
+  outline: none;
+}
